@@ -15,6 +15,8 @@ class TestProducer {
     @GetMapping
     public Response produceRandomStrings() {
         ArrayList<String> randomWords = new ArrayList<>();
+        String version = System.getProperty("java.version");
+        randomWords.add(version);
         for (int i = 0; i < 1000000; i++) {
             String generatedString = RandomStringUtils.randomAlphabetic(10);
             randomWords.add(generatedString);
